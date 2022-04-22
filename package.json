@@ -1,0 +1,35 @@
+{
+  "name": "blazed-rod-launcher",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:electron": "cross-env NODE_ENV=development electron ./src/electron/index.js",
+    "start:react": "cross-env NODE_ENV=development PORT=1234 parcel ./src/render/index.html --dist-dir ./src/electron/assets/",
+    "start": "cross-env NODE_ENV=development concurrently --kill-others --names \"Parcel,Electron\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run start:react\" \"npm run start:electron\"",
+    "clean": "rimraf ./src/electron/assets/"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.0",
+    "autoprefixer": "^10.4.4",
+    "concurrently": "^7.1.0",
+    "cross-env": "^7.0.3",
+    "electron": "^18.1.0",
+    "path-browserify": "^1.0.1",
+    "postcss": "^8.4.12",
+    "process": "^0.11.10",
+    "rimraf": "^3.0.2",
+    "tailwindcss": "^3.0.24"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.1",
+    "node-fetch": "2.6.6",
+    "parcel": "^2.4.1",
+    "platform-folders": "^0.6.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-redux": "^8.0.1",
+    "react-router-dom": "6"
+  }
+}
